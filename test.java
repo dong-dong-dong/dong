@@ -5,19 +5,19 @@ import java.util.Random;
 import java.util.Scanner;
 public class test {
 	public static void main(String[] args) throws Exception {
-		/*ĞÂ½¨Ğ´ÈëÎÄ¼şµÄ¶ÔÏó*/
+		//æ–°å»ºå†™å…¥æ–‡ä»¶çš„å¯¹è±¡
 		FileWriter f = new FileWriter("F://result.txt");
-		/*½¨Á¢Ëæ»úÊı¶ÔÏó£¬Ñ¡Ôñ½øĞĞÔËËãµÄÔËËã·û¡¢Ñ¡ÔñËæ»ú·ûºÅ*/
+		//å»ºç«‹éšæœºæ•°å¯¹è±¡ï¼Œé€‰æ‹©è¿›è¡Œè¿ç®—çš„è¿ç®—ç¬¦ã€é€‰æ‹©éšæœºç¬¦å·
 		Random rm = new Random();
 		char[] opera_all = { '*', '/', '+', '-' };
 		char operachar;
-		/*ÒªĞ´ÈëÎÄ¼şµÄ×Ö·û£¬¶¨Òå m,n Á½¸öÔËËãÊı £¬cÊÇmºÍn ÔËËã²Ù×÷µÄ½á¹û¡¢¹æ¶¨³öÌâÊı*/
+		//è¦å†™å…¥æ–‡ä»¶çš„å­—ç¬¦ï¼Œå®šä¹‰ m,n ä¸¤ä¸ªè¿ç®—æ•° ï¼Œcæ˜¯må’Œn è¿ç®—æ“ä½œçš„ç»“æœã€è§„å®šå‡ºé¢˜æ•°
 		String write_file = "";
 		int m = 0, n = 0, c = 0;
 		Scanner sc=new Scanner(System.in);
 		int mm=sc.nextInt();
-		/*Ã¿´Î²úÉúËæ»úÊı£¨´ÓÊı×éÈ¡ÔËËã·ûºÅ£©*/
-		System.out.println("ÊäÈëÊı¾İ·¶Î§  ");
+		//æ¯æ¬¡äº§ç”Ÿéšæœºæ•°ï¼ˆä»æ•°ç»„å–è¿ç®—ç¬¦å·ï¼‰
+		System.out.println("è¾“å…¥æ•°æ®èŒƒå›´  ");
 		Scanner ss=new Scanner(System.in);
 		int nn=sc.nextInt();
 		for (int i = 0; i < mm; i++) {
@@ -30,7 +30,7 @@ public class test {
 				i--;
 				continue;
 			}
-         /*ÓÃswitchÓï¾äÔËËã·ûºÅÅĞ¶Ï Ñ¡Ôñ*/
+         //ç”¨switchè¯­å¥è¿ç®—ç¬¦å·åˆ¤æ–­ é€‰æ‹©
 			switch (operachar) {  
 			case '+':
 				c = m + n;
@@ -42,7 +42,7 @@ public class test {
 				c = m * n;
 				break;
 			case '/':
-				/*ÅÅ³ı·ÖÄ¸²»ÄÜÎª0*/
+				//æ’é™¤åˆ†æ¯ä¸èƒ½ä¸º0
 				if (n == 0) {
 					i--;
 					continue;
@@ -50,24 +50,24 @@ public class test {
 				c = m / n;
 				break;
 			}
-			/*ÅÅ³ı³¬¹ı100¡¢¸ºÊıµÄÇé¿ö*/
+			//æ’é™¤è¶…è¿‡100ã€è´Ÿæ•°çš„æƒ…å†µ
 			if (c >= 100 || c < 0) {
 				i--;
 				continue;
 			}
-             /*½«ÌâÒÔ×Ö·û·½Ê½Æ´½Ó ¡¢²¢È¥µôÖØ¸´µÄÌâ*/
+             //å°†é¢˜ä»¥å­—ç¬¦æ–¹å¼æ‹¼æ¥ ã€å¹¶å»æ‰é‡å¤çš„é¢˜
 			String h = m + "" + operachar + n + "=";
              if (write_file.contains(h)) {
 				i--;
 				continue;
 			}
-             /*Ğ´ÈëÎÄ¼ş²Ù×÷*/
-			write_file = write_file +"µÚ"+(i+1)+"Ìâ£º"+h + " " + "\n";	
+             //å†™å…¥æ–‡ä»¶æ“ä½œ
+			write_file = write_file +"ç¬¬"+(i+1)+"é¢˜ï¼š"+h + " " + "\n";	
 		}
 		
-		/*Ğ´ÈëÎÄ¼ş¡¢ÎÄ¼ş¹Ø±Õ*/
+		//å†™å…¥æ–‡ä»¶ã€æ–‡ä»¶å…³é—­
 		f.write(write_file);
 		f.close();
-		System.out.println("Ğ´ÍêÀ²£¡ÔÚÎÄ¼şF:// result.txt");
+		System.out.println("å†™å®Œå•¦ï¼åœ¨æ–‡ä»¶F:// result.txt");
 	}
 }
